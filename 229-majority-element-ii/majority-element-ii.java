@@ -6,8 +6,9 @@ class Solution {
         HashMap<Integer, Integer> mp = new HashMap<>();
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < len; i++) {
+            if(list.contains(nums[i])) continue;
             mp.put(nums[i], mp.getOrDefault(nums[i], 0)+1);
-            if (mp.get(nums[i]) > valid && !list.contains(nums[i])) {
+            if (mp.get(nums[i]) > valid ) {
                 list.add(nums[i]);
             }
         }
